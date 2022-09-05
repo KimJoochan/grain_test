@@ -30,47 +30,17 @@
       a{
           text-decoration: none;
           color: #333;
-      }
-      .audio_area{
-        width: 100%;
-        height: auto;
-        float: left;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 9;
-      }
-      .audio_area>.wrap{
-        position: relative;
-      }
-      .audio_area>.wrap>figure{
-        display: none;
-      }
-      .audio_area>.wrap>.switch{
-        width: 30px;
-        height: 30px;
-        margin-top: 15px;
-        margin-right: 15px;
-        float: right;
-      }
-      .audio_area>.wrap>.switch>img{
-        width: 100%;
-        height: auto;
-        float: left;
-      }
-      .audio_area>.wrap>.switch>.on{
-        display: none;
-      }</style><script defer="defer" src="/grain_test/js/chunk-vendors.8efabd5a.js"></script><script defer="defer" src="/grain_test/js/app.501f3659.js"></script><link href="/grain_test/css/app.1013a2b1.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but matthias_grain doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="audio_area"><div class="wrap"><figure><figcaption>Listen to the T-Rex:</figcaption><audio id="audio_id" controls src="./No.9_Esther’s Waltz - Esther Abrami.mp3">Your browser does not support the <code>audio</code> element.</audio></figure><div class="switch"><img src="./sound_1.png" class="on"> <img src="./sound_2.png" class="off"></div></div></div><div id="app"></div></body><script>var once=false;
-    $(document).on('click','body,html',function(){
-      if(!once){
-        once=true;
-        $('.audio_area>.wrap>.switch').trigger('click');
-        return false;
-      }
-    });
+      }</style><script defer="defer" src="/grain_test/js/chunk-vendors.8efabd5a.js"></script><script defer="defer" src="/grain_test/js/app.2b89ddf9.js"></script><link href="/grain_test/css/app.bef62a9e.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but matthias_grain doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="audio_area" style="display:none;"><div class="wrap"><figure><figcaption>Listen to the T-Rex:</figcaption><audio id="audio_id" controls src="./No.9_Esther’s Waltz - Esther Abrami.mp3">Your browser does not support the <code>audio</code> element.</audio></figure><div class="btn_area"><div class="switch"><img src="./soundon.png" class="on"> <img src="./soundoff.png" class="off"></div></div></div></div><div id="app"></div></body><script>var once=false;
+    // $(document).on('click','body,html',function(){
+    //   if(!once){
+    //     once=true;
+    //     $('.audio_area>.wrap>.btn_area>.switch').trigger('click');
+    //     return false;
+    //   }
+    // });
 
 
-    $('.audio_area>.wrap>.switch').click(function(){
+    $('.audio_area>.wrap>.btn_area>.switch').click(function(){
       var that = $(this);
       var on = that.find('.on');
       var off = that.find('.off');
