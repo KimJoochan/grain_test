@@ -30,9 +30,15 @@
       a{
           text-decoration: none;
           color: #333;
-      }</style><script defer="defer" src="js/chunk-vendors.8efabd5a.js"></script><script defer="defer" src="js/app.3096dfbe.js"></script><link href="css/app.33126f55.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but matthias_grain doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="audio_area" style="display:none;"><div class="wrap"><figure><figcaption>Listen to the T-Rex:</figcaption><audio id="audio_id" controls src="./No.9_Esther’s Waltz - Esther Abrami.mp3">Your browser does not support the <code>audio</code> element.</audio></figure><div class="btn_area"><div class="switch"><img src="./soundon.png" class="on"> <img src="./soundoff.png" class="off"></div></div></div></div><div id="app"></div></body><script>var once=false;
-    $(document).on('click','body,html',function(){
+      }</style><script defer="defer" src="js/chunk-vendors.8efabd5a.js"></script><script defer="defer" src="js/app.8da6ca23.js"></script><link href="css/app.2c782287.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but matthias_grain doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="audio_area" style="display:none;"><div class="wrap"><figure><figcaption>Listen to the T-Rex:</figcaption><audio id="audio_id" controls src="./No.9_Esther’s Waltz - Esther Abrami.mp3">Your browser does not support the <code>audio</code> element.</audio></figure><div class="btn_area"><div class="switch"><img src="./soundon.png" class="music_off"> <img src="./soundoff.png" class="music_on"></div></div></div></div><div id="app"></div></body><script>var once=false;
+    $(document).on('click','body,html',function(e){
+      
       if(!once){
+        var avoid_target = $(e.target);
+        console.log(avoid_target);
+        if(avoid_target.hasClass('music_on') || avoid_target.hasClass('music_off')){
+          return false;
+        }
         once=true;
         //$('.audio_area>.wrap>.btn_area>.switch').trigger('click');
         $('.audio_area>.wrap>.btn_area>.right_area>.switch').trigger('click');
@@ -43,8 +49,8 @@
 
     $('.audio_area>.wrap>.btn_area>.switch').click(function(){
       var that = $(this);
-      var on = that.find('.on');
-      var off = that.find('.off');
+      var on = that.find('.music_on');
+      var off = that.find('.music_off');
       var on_status = on.css('display');
       var off_status = off.css('display');
       if(on_status=='none' && off_status=='block'){
