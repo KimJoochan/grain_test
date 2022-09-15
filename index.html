@@ -35,8 +35,8 @@
       
       if(!once){
         var avoid_target = $(e.target);
-        console.log(avoid_target);
         if(avoid_target.hasClass('music_on') || avoid_target.hasClass('music_off')){
+          once=true;  
           return false;
         }
         once=true;
